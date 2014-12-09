@@ -23,7 +23,11 @@ public class LaunchTest {
         capabilities.setCapability("deviceName",System.getProperty("deviceName"));
         capabilities.setCapability("udid",System.getProperty("deviceUDID"));
         capabilities.setCapability("bundleId","com.shopkick.debug-qa");
-        AppiumDriver driver= new IOSDriver(new URL("http://0.0.0.0:4723/wd/hub"),capabilities);
+        //AppiumDriver driver= new IOSDriver(new URL("http://0.0.0.0:4723/wd/hub"),capabilities);
+        System.out.println(System.getProperty("platformType"));
+        System.out.println(System.getProperty("platformVersion"));
+        System.out.println(System.getProperty("deviceName"));
+        System.out.println(System.getProperty("deviceUDID"));
 
     }
 }
