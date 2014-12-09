@@ -3,6 +3,7 @@ package com.qa.automation;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.ios.IOSDriver;
 import org.junit.Test;
+import org.openqa.selenium.By;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
@@ -33,14 +34,15 @@ public class LaunchTest {
         driver.findElementsByClassName("UIAButton").get(3).click(); //Signup on LoginFlow
         driver.findElementsByClassName("UIAButton").get(4).click(); //Click on Email Login
         driver.findElementsByClassName("UIATextField").get(0).sendKeys("srikanth.vejendla@yahoo.com"); //Set UserName
-        Thread.sleep(2000);
-        driver.findElementsByClassName("UIASecureTextField").get(0).sendKeys("hdxjhdjh"); //Set Password
+        Thread.sleep(1000);
+        driver.findElementsByClassName("UIASecureTextField").get(0).sendKeys("satyam123$"); //Set Password
         driver.findElementsByClassName("UIAButton").get(3).click();
-        Thread.sleep(2000);
-        //driver.findElement(By.xpath("//UIAApplication[1]/UIAWindow[3]/UIAKeyboard[1]/UIAButton[4]")).click();
-        driver.findElementsByClassName("UIAButton").get(1).click();
-        Thread.sleep(5000);
-        driver.findElementsByClassName("UIAStaticText").get(0).isDisplayed();
+        driver.findElement(By.xpath("//UIAApplication[1]/UIAWindow[1]/UIAButton[4]")).click();  //Close Window
+        driver.findElement(By.xpath("//UIAApplication[1]/UIAWindow[1]/UIAButton[1]")).click();
+        driver.scrollTo("Settings");
+        driver.findElementByName("Settings").click();
+        driver.findElement(By.xpath("//UIAApplication[1]/UIAWindow[1]/UIATableView[2]/UIATableCell[2]/UIAButton[1]")).click();
+        driver.findElement(By.xpath("//UIAApplication[1]/UIAWindow[1]/UIAButton[7]")).click();
         driver.quit();
     }
 }
